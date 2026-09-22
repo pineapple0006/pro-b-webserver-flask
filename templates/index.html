@@ -7,8 +7,54 @@
     <title>Temp</title>
 </head>
 <body>
-    <div id="container">
-        Velkommen til denne meget interessante hjemmeside om !
+    <div class="container-row-full">
+        <div class="container-col">
+            <h1>Velkommen til denne meget interessante hjemmeside med citater!</h1>
+            <form action="/" method="post">
+                <input type="text" name="quote" required placeholder="Citat..." maxlength="600">
+                <input type="text" name="quote_by" required placeholder="Hvem sagde citatet?" maxlength="30">
+                <input type="text" name="user" required placeholder="Dit navn..." maxlength="30">
+                <button type="submit">Send!</button>
+            </form>
+            <form action="/" method="get">
+                <input type="text" name="query" placeholder="Søgning...">
+                <button type="submit">Søg!</button>
+            </form>
+            <div>
+                <table>
+                    <tr>
+                        <th>
+                            Citat
+                        </th>
+                        <th>
+                            Sagt af
+                        </th>
+                        <th>
+                            Tilføjet af
+                        </th>
+                        <th>
+                            Tilføjet på dag og tidspunkt
+                        </th>
+                    </tr>
+                {% for row in entries %}
+                    <tr>
+                        <td class="quote-data">
+                            {{ row[2] }}
+                        </td>
+                        <td>
+                            {{ row[3] }}
+                        </td>
+                        <td>
+                            {{ row[1] }}
+                        </td>
+                        <td>
+                            {{ row[4] }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
+            </div>
+        </div>
     </div>
 </body>
 </html>

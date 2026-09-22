@@ -16,25 +16,46 @@ def initialize():
     cur.close()
     con.commit()
 
-def validate_entry(user, quote, quote_by):
+def validate_entry(user: str, quote: str, quote_by: str):
+    return True if (len(quote) <= 600 and len(quote_by) <= 120 and len(quote_by) <= 120) else False
+
+def add_entry(user: str, quote: str, quote_by: str):
+    if not validate_entry(user, quote, quote_by): return
+
+    con = sqlite3.connect("quotes.db")
+    cur = con.cursor()
+    cur.execute("""
+    INSERT INTO quotes
+    (
+    user,
+    quote,
+    quote_by
+    )
+    VALUES(?, ?, ?)
+    """,
+    (user, quote, quote_by))
+    cur.close()
+    con.commit()
+
+def validate_query(search: str):
     return True
 
-def add_entry(user, quote, quote_by):
-    if validate_entry(user, quote, quote_by):
-        con = sqlite3.connect("quotes.db")
-        cur = con.cursor()
-        cur.execute("""
-        INSERT INTO quotes
-        (
-        user,
-        quote,
-        quote_by
-        )
-        VALUES(?, ?, ?)
-        """,
-        (user, quote, quote_by))
-        cur.close()
-        con.commit()
+def get_entries(search: str):
+    if not validate_query(search): return []
+    search = ("%" if not search.startswith("%") else "") + search + ("%" if not search.endswith("%") else "")
+    con = sqlite3.connect("quotes.db")
+    cur = con.cursor()
+    res = cur.execute("""
+    SELECT * FROM quotes
+    WHERE user LIKE ?
+    OR quote LIKE ?
+    OR quote_by LIKE ?
+    ORDER BY id DESC
+    """,
+    (search, search, search)).fetchall()
+    cur.close()
+    con.commit()
+    return res
 
 if __name__ == "__main__":
     initialize()
