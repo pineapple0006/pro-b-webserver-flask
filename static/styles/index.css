@@ -1,6 +1,14 @@
+:root {
+    --main-color:rgb(181, 212, 255);
+}
+
 * {
     margin: 0px;
     padding: 0px;
+}
+
+body {
+    background-color: var(--main-color);
 }
 
 .container-row-full {
