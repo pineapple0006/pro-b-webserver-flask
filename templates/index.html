@@ -23,33 +23,17 @@
             <div>
                 <table>
                     <tr>
-                        <th>
-                            Citat
-                        </th>
-                        <th>
-                            Sagt af
-                        </th>
-                        <th>
-                            Tilføjet af
-                        </th>
-                        <th>
-                            Tilføjet på dag og tidspunkt
-                        </th>
+                        <th>Citat</th>
+                        <th>Sagt af</th>
+                        <th>Tilføjet af</th>
+                        <th>Tilføjet på dag og tidspunkt</th>
                     </tr>
                 {% for row in entries %}
                     <tr>
-                        <td class="quote-data">
-                            {{ row[2] }}
-                        </td>
-                        <td>
-                            {{ row[3] }}
-                        </td>
-                        <td>
-                            {{ row[1] }}
-                        </td>
-                        <td>
-                            {{ row[4] }}
-                        </td>
+                        <td class="quote-data">{{ row["quote"] }}</td>
+                        <td>{{ row["quote_by"] }}</td>
+                        <td>{{ row["user"] }}</td>
+                        <td>{{ row["timestamp"] }}</td>
                     </tr>
                 {% endfor %}
                 </table>

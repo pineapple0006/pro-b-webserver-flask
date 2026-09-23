@@ -37,6 +37,12 @@ def add_entry(user: str, quote: str, quote_by: str):
     cur.close()
     con.commit()
 
+def dict_factory(cursor, row):
+    d = {}
+    for idx, col in enumerate(cursor.description):
+        d[col[0]] = row[idx]
+    return d
+
 def validate_query(search: str):
     return True
 
@@ -44,6 +50,7 @@ def get_entries(search: str):
     if not validate_query(search): return []
     search = ("%" if not search.startswith("%") else "") + search + ("%" if not search.endswith("%") else "")
     con = sqlite3.connect("quotes.db")
+    con.row_factory = dict_factory
     cur = con.cursor()
     res = cur.execute("""
     SELECT * FROM quotes
