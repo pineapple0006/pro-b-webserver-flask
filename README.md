@@ -11,18 +11,39 @@ Kun testet i Python 3.14.7
 ## Installation
 
 1. Create virtual environment:
-   `python3 -m venv ./.venv`
+
+```
+python3 -m venv ./.venv
+```
+
 2. Activate virtual environment:
 
 - Windows (cmd.exe):
-  `.venv/Scripts/activate.bat`
+
+```
+.venv/Scripts/activate.bat
+```
+
 - Windows (PowerShell):
-  `.venv/Scripts/activate.ps1`
+
+```
+.venv/Scripts/activate.ps1
+```
+
 - Linux:
-  `source .venv/bin/activate`
+
+```
+source .venv/bin/activate
+```
 
 3. Install requirements:
-   `pip install -r requirements.txt`
+
+```
+pip install -r requirements.txt
+```
 
 4. Run server:
-   `python3 app.py`
+
+```
+python3 app.py
+```
