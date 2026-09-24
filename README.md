@@ -18,19 +18,19 @@ python3 -m venv ./.venv
 
 ### 2. Activate virtual environment:
 
-#### - Windows (cmd.exe):
+#### Windows (cmd.exe):
 
 ```bash
 .venv/Scripts/activate.bat
 ```
 
-#### - Windows (PowerShell):
+#### Windows (PowerShell):
 
 ```bash
 .venv/Scripts/activate.ps1
 ```
 
-#### - Linux:
+#### Linux:
 
 ```bash
 source .venv/bin/activate
