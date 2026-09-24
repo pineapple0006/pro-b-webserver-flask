@@ -12,7 +12,7 @@ Kun testet i Python 3.14.7
 
 ### 1. Create virtual environment:
 
-```python
+```bash
 python3 -m venv ./.venv
 ```
 
@@ -20,13 +20,13 @@ python3 -m venv ./.venv
 
 - Windows (cmd.exe):
 
-```cmd
+```bash
 .venv/Scripts/activate.bat
 ```
 
 - Windows (PowerShell):
 
-```ps
+```bash
 .venv/Scripts/activate.ps1
 ```
 
@@ -38,13 +38,13 @@ source .venv/bin/activate
 
 ### 3. Install requirements:
 
-```pip
+```bash
 pip install -r requirements.txt
 ```
 
 ### 4. Run server:
 
-```py
+```bash
 python3 app.py
 ```
 
