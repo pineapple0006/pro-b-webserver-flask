@@ -21,4 +21,4 @@ def documentation():
     assert request.method == "GET"
     return render_template("dokumentation.html")
 
-app.run(debug=True)
+app.run()
