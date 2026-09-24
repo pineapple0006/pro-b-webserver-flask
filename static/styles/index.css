@@ -1,14 +1,37 @@
 :root {
-    --main-color:rgb(181, 212, 255);
+    --primary-color:rgb(205, 226, 255);
+    --secondary-color: rgb(52, 106, 255);
+    --accent-color: rgb(110, 160, 230);
+    --accent-transparent: rgba(150, 194, 255, 0.5);
 }
 
 * {
     margin: 0px;
     padding: 0px;
+    color: var(--secondary-color);
 }
 
 body {
-    background-color: var(--main-color);
+    background-color: var(--primary-color);
+}
+
+input {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 6px 12px;
+    border: 1px solid black;
+    color: black;
+    font-size: medium;
+}
+
+button {
+    border-radius: 5px;
+    background-color: var(--accent-transparent);
+    padding: 6px 12px;
+    cursor: pointer;
+    border: 1px solid black;
+    font-weight: bolder;
+    font-size: medium;
 }
 
 .container-row-full {
@@ -39,6 +62,38 @@ table {
 }
 
 table * {
-    border: 1px solid black;
+    border: 1px solid var(--accent-color);
     padding: 5px 8px;
+}
+
+.navbar {
+    width: 100vw;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: x-large;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin: 15px;
+    margin-right: 20px;
+    margin-left: 0px;
+}
+
+.navbar-content a {
+    text-decoration: none;
+    text-align: center;
+}
+
+.documentation-text {
+    width: 40vw;
+    justify-content: start !important;
+}
+
+.documentation-text * {
+    margin-bottom: 10px;
 }

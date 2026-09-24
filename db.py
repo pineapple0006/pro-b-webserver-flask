@@ -10,7 +10,7 @@ def initialize():
     user STRING,
     quote STRING,
     quote_by STRING,
-    Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
     )
     """)
     cur.close()

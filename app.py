@@ -16,4 +16,9 @@ def home():
     query = request.args.get("query", "")
     return render_template("index.html", entries=db.get_entries(query))
 
+@app.route("/dokumentation", methods=["GET"])
+def documentation():
+    assert request.method == "GET"
+    return render_template("dokumentation.html")
+
 app.run(debug=True)
