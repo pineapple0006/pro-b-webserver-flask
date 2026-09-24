@@ -53,7 +53,7 @@ button {
 .quote-data {
     max-width: 20vw;
     width: 20vw;
-    word-break: break-all;
+    word-break: normal;
 }
 
 table {
